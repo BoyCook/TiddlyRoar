@@ -1,0 +1,29 @@
+<h1>Listing tiddlers</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Tags</th>
+  </tr>
+
+<% for tiddler in @tiddlers %>
+  <tr>
+    <td><%=h tiddler.title %></td>
+    <td><%=h tiddler.text %></td>
+    <td><%=h tiddler.tags %></td>
+    <td><%=h tiddler.bag %></td>
+    <td><%=h tiddler.modifier %></td>
+    <td><%= link_to 'Show', tiddler %></td>
+    <td><%= link_to 'Edit', edit_tiddler_path(tiddler) %></td>
+    <td><%= link_to 'Destroy', tiddler, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<!-- For test purposes -->
+<input type="text" style="width:300px" name="authenticity_token" value="<%= form_authenticity_token%>" />
+
+<br />
+
+<%= link_to 'New tiddler', new_tiddler_path %>

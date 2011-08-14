@@ -1,0 +1,27 @@
+<p>
+  <b>Title:</b>
+  <%=h @tiddler.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%=h @tiddler.text %>
+</p>
+
+<p>
+  <b>Tags:</b>
+  <%=h @tiddler.tags %>
+</p>
+
+<p>
+  <b>Bag:</b>
+  <%=h @tiddler.bag %>
+</p>
+
+<p>
+  <b>Modifier:</b>
+  <%=h @tiddler.modifier %>
+</p>
+
+<%= link_to 'Edit', edit_tiddler_path(@tiddler) %> |
+<%= link_to 'Back', tiddlers_path %>
